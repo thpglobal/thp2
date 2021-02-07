@@ -8,7 +8,7 @@
 
 </div>
 
-<footer class="site-footer">untheme by Tania Rascia.</footer>
+<footer class="site-footer"><a href=/wp-admin>Admin</a></footer>
 
 <?php wp_footer(); ?>
 
