@@ -2,86 +2,79 @@
 /**
  * Functions and definitions
  *
- */
-
-/*
- * Let WordPress manage the document title.
- */
-add_theme_support( 'title-tag' );
-
-/*
- * Enable support for Post Thumbnails on posts and pages.
- */
-add_theme_support( 'post-thumbnails' );
-
-/*
- * Switch default core markup for search form, comment form, and comments
- * to output valid HTML5.
- */
-add_theme_support( 'html5', array(
-	'search-form',
-	'comment-form',
-	'comment-list',
-	'gallery',
-	'caption',
-) );
-
-/** 
- * Include primary navigation menu
- */
-function thptheme_nav_init() {
-	register_nav_menus( array(
-		'menu-1' => 'Primary Menu',
-	) );
-}
-add_action( 'init', 'thptheme_nav_init' );
-
-/**
- * Register widget area.
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
+ * @package thp2
+ * @since 1.0.0
  */
-function thptheme_widgets_init() {
-	register_sidebar( array(
-		'name'          => 'Sidebar',
-		'id'            => 'sidebar-1',
-		'description'   => 'Add widgets',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'thptheme_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * The theme version.
+ *
+ * @since 1.0.0
  */
-function thptheme_scripts() {
-	wp_enqueue_style( 'thptheme-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'thptheme-custom-style', get_template_directory_uri() . '/assets/css/style.css' );
-	wp_enqueue_script( 'thptheme-scripts', get_template_directory_uri() . '/assets/js/scripts.js' );
-}
-add_action( 'wp_enqueue_scripts', 'thptheme_scripts' );
+define( 'THP2_VERSION', wp_get_theme()->get( 'Version' ) );
 
-function thptheme_create_post_custom_post() {
-	register_post_type('custom_post', 
-		array(
-		'labels' => array(
-			'name' => __('Custom Post', 'thptheme'),
-		),
-		'public'       => true,
-		'hierarchical' => true,
-		'supports'     => array(
-			'title',
-			'editor',
-			'excerpt',
-			'custom-fields',
-			'thumbnail',
-		), 
-		'taxonomies'   => array(
-				'post_tag',
-				'category',
-		) 
-	));
+/**
+ * Add theme support for block styles and editor style.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function thp2_setup() {
+	add_theme_support( 'wp-block-styles' );
+	add_editor_style( './assets/css/style-shared.min.css' );
+
+	/*
+	 * Load additional block styles.
+	 * See details on how to add more styles in the readme.txt.
+	 */
+	$styled_blocks = [ 'button', 'file', 'latest-comments', 'latest-posts', 'quote', 'search' ];
+	foreach ( $styled_blocks as $block_name ) {
+		$args = array(
+			'handle' => "thp2-$block_name",
+			'src'    => get_theme_file_uri( "assets/css/blocks/$block_name.min.css" ),
+			$args['path'] = get_theme_file_path( "assets/css/blocks/$block_name.min.css" ),
+		);
+		// Replace the "core" prefix if you are styling blocks from plugins.
+		wp_enqueue_block_style( "core/$block_name", $args );
+	}
+
 }
-add_action('init', 'thptheme_create_post_custom_post'); // Add our work type
+add_action( 'after_setup_theme', 'thp2_setup' );
+
+/**
+ * Enqueue the CSS files.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function thp2_styles() {
+	wp_enqueue_style(
+		'thp2-style',
+		get_stylesheet_uri(),
+		[],
+		THP2_VERSION
+	);
+	wp_enqueue_style(
+		'thp2-shared-styles',
+		get_theme_file_uri( 'assets/css/style-shared.min.css' ),
+		[],
+		THP2_VERSION
+	);
+}
+add_action( 'wp_enqueue_scripts', 'thp2_styles' );
+
+// Filters.
+require_once get_theme_file_path( 'inc/filters.php' );
+
+// Block variation example.
+require_once get_theme_file_path( 'inc/register-block-variations.php' );
+
+// Block style examples.
+require_once get_theme_file_path( 'inc/register-block-styles.php' );
+
+// Block pattern and block category examples.
+require_once get_theme_file_path( 'inc/register-block-patterns.php' );
