@@ -8,7 +8,7 @@ Text Domain: thp2
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.0
-Version: 1.0.2
+Version: 1.0.3
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -71,6 +71,11 @@ Sticky header is experimental, only use it on the front for screens above 782px 
 		padding-right: var(--wp--custom--h-spacing);
 	}
 }
-.main-navigation {text-transform:uppercase;}
+.wp-block-navigation-item__content {text-transform:uppercase;}
 .site-header {padding:0; margin:0;}
+h1, h2, blockquote {font-family: 'Unna', serif; font-weight: normal; color: var(--primary);}
+h3, h4{ color: var(--primary); font-size:20px; font-weight:bold; line-height:20px;}
+h1 { margin-top: 0; font-size: 60px;}
+h2 {font-size: 45px;}
+
 
