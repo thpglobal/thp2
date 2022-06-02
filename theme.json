@@ -57,28 +57,37 @@
 			"dropCap": false,
 			"fontFamilies": [
 				{
-					"name": "Serif",
-					"slug": "serif",
-					"fontFamily": "Unna,serif"
-				},
-				{
-					"name": "Lora",
-					"slug": "lora",
-					"fontFamily": "Lora,\"Times New Roman\",\"New York\",Times,\"Noto Serif\",serif",
+					"fontFamily": "Unna",
+					"name": "Unna",
+					"slug": "unna",
 					"fontFace": [
 						{
-							"fontFamily": "Lora",
-							"fontWeight": "200 900",
+							"fontFamily": "Unna",
+							"fontWeight": "400",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/lora-v23-latin-ext_latin-regular.woff2" ]
+							"src": [ "file:./assets/fonts/unna-v21-latin-regular.woff2" ]
+						}
+					]
+				},
+				{
+					"name": "Source Sans Pro",
+					"slug": "source-sans-pro",
+					"fontFamily": "\"Source Sans Pro\",sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro-v21-latin-regular.woff2" ]
 						},
 						{
-							"fontFamily": "Lora",
-							"fontWeight": "200 900",
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "400",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/lora-v23-latin-ext_latin-italic.woff2" ]
+							"src": [ "file:./assets/fonts/source-sans-pro-v21-latin-italic.woff2" ]
 						}
 					]
 				}
