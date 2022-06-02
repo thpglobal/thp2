@@ -29,6 +29,17 @@
 					"name": "Secondary"
 				},
 				{
+					"slug": "salmon",
+					"color": "#ff6666",
+					"name": "Salmon"
+
+				},
+				{
+					"slug": "yellow",
+					"color": "#ffca05",
+					"name": "Yellow"
+				},								
+				{
 					"slug": "transparent",
 					"color": "transparent",
 					"name": "Transparent"
@@ -48,12 +59,7 @@
 				{
 					"name": "Serif",
 					"slug": "serif",
-					"fontFamily": "\"Times New Roman\",\"New York\",Times,\"Noto Serif\",serif"
-				},
-				{
-					"name": "Monospace",
-					"slug": "monospace",
-					"fontFamily": "Consolas,Menlo,Monaco,\"SF Mono\",\"DejaVu Sans Mono\",\"Roboto Mono\",\"Courier New\",Courier,monospace"
+					"fontFamily": "Unna,serif"
 				},
 				{
 					"name": "Lora",
