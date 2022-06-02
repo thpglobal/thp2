@@ -56,20 +56,7 @@
 		"typography": {
 			"dropCap": false,
 			"fontFamilies": [
-				{
-					"fontFamily": "Unna",
-					"name": "Unna",
-					"slug": "unna",
-					"fontFace": [
-						{
-							"fontFamily": "Unna",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/unna-v21-latin-regular.woff2" ]
-						}
-					]
-				},
+				
 				{
 					"name": "Source Sans Pro",
 					"slug": "source-sans-pro",
@@ -88,6 +75,20 @@
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/source-sans-pro-v21-latin-italic.woff2" ]
+						}
+					]
+				},
+				{
+					"fontFamily": "Unna",
+					"name": "Unna",
+					"slug": "unna",
+					"fontFace": [
+						{
+							"fontFamily": "Unna",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/unna-v21-latin-regular.woff2" ]
 						}
 					]
 				}
