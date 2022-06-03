@@ -157,6 +157,27 @@
 				"color": {
 					"text": "var(--wp--preset--color--foreground)"
 				}
+			},
+			"h1": {
+				"typography": {
+					"fontFamily":"Unna",
+					"color":"#0000aa",
+					"fontSize": "60px"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontFamily":"Unna",
+					"color":"#0000aa",
+					"fontSize": "45px"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontFamily":"Sourcs Sans Pro",
+					"fontSize": "20px",
+					"color":"#0000aa"
+				}
 			}
 		},
 		"blocks": {
